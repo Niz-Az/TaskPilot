@@ -4,6 +4,7 @@ sys.path.append(str(Path(__file__).resolve().parents[1]))
 
 from app.db import Base
 from app.models.user import User 
+from app.models.task import Task
 
 
 
