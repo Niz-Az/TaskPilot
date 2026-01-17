@@ -11,5 +11,18 @@ services:
     volumes:
       - taskpilot_pgdata:/var/lib/postgresql/data
 
+  db_test:
+    image: postgres:16
+    container_name: taskpilot_db_test
+    environment:
+      POSTGRES_USER: taskpilot_test
+      POSTGRES_PASSWORD: taskpilot_test
+      POSTGRES_DB: taskpilot_test
+    ports:
+      - "5434:5432"
+    volumes:
+      - taskpilot_test_pgdata:/var/lib/postgresql/data
+
 volumes:
   taskpilot_pgdata:
+  taskpilot_test_pgdata:
